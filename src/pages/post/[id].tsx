@@ -76,9 +76,14 @@ const PostDetail: NextPage = ({
                     color="white"
                     bg="brand"
                     _hover={{ color: "black", bgColor: "gray.100" }}
-                    href={`mailto:${
-                      dataWithType.data.user.email
-                    }?subject=Hey i want to join this idea&body=Hey i found this on summer share, i want to join this idea. ${window.location.toString()}`}
+                    isDisabled={!dataWithType.data.is_joinable}
+                    href={
+                      dataWithType.data.is_joinable
+                        ? `mailto:${
+                            dataWithType.data.user.email
+                          }?subject=Hey i want to join this idea&body=Hey i found this on summer share, i want to join this idea. ${window.location.toString()}`
+                        : undefined
+                    }
                   >
                     Join
                   </Button>
