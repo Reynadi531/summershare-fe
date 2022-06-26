@@ -33,7 +33,7 @@ const PostDetail: NextPage = ({
   const dataWithType = data as Data;
   return (
     <>
-      <NextSeo title="Post detail" />
+      <NextSeo title="Post detail" description={dataWithType.data.body} />
       <Main>
         <Navbar />
         <Box minH="800px">
